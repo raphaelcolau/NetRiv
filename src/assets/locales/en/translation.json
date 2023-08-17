@@ -5,5 +5,7 @@
     "page_tab_label-vps": "VPS",
     "page_tab_label-games": "Games Servers",
     "page_tab_label-web": "Web Hosting",
+    "page_tab_label-games--short": "Games",
+    "page_tab_label-web--short": "Web",
     "button_label-customer-area": "Customer Area"
 }
