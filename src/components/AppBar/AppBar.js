@@ -6,6 +6,7 @@ import Tab3 from '../Tabs/Tab3';
 import Tabs3 from '../Tabs/Tabs3';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from '@mui/material';
 import SelectLanguageButton from '../Button/LangSelector';
 
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
@@ -19,6 +20,26 @@ const pages = [
     { label: "page_tab_label-web", path: "/web", icon: <FiberManualRecordIcon sx={{fontSize: 16}} /> },
 ]
 
+function Logo()  {
+    const theme = useTheme();
+
+    return (
+        <Box sx={{
+            height: "40px",
+            border: "1px solid red",
+        }}>
+            <img
+                src={useMediaQuery(theme.breakpoints.up('tablet')) ? "/images/logo.png" : "/images/logo-square.png"}
+                alt="NetRiv Logo"
+                style={{
+                    height: "100%",
+                    filter: theme.palette.mode === 'dark' ? 'invert(1)' : 'invert(0)',
+                }}
+            />
+        </Box>
+    )
+}
+
 export function ResponsiveAppBar() {
     const { t } = useTranslation();
     const [tabIndex, setTabIndex] = React.useState(0);
@@ -29,11 +50,7 @@ export function ResponsiveAppBar() {
             <Container maxWidth='false'>
                 <StyledToolbar disableGutters>
                     
-                    <img 
-                        src="/images/logo.png"
-                        alt="NetRiv Logo"
-                        height="40"
-                    />
+                    <Logo />
 
                     <Box>
                         <Tabs3 value={tabIndex} onChange={e => {setTabIndex(e.target.tabIndex)}}>
