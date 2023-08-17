@@ -30,7 +30,16 @@ export const theme = createTheme({
         outline: {
             main: "#767680",
         }
-
-
+    },
+    breakpoints: {
+        values: {
+            mobile_s: 0,
+            mobile_m: 380,
+            mobile_l: 430,
+            tablet: 770,
+            laptop: 1030,
+            laptop_l: 1444,
+            desktop: 2565,
+        }
     },
 });
