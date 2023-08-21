@@ -8,5 +8,11 @@
     "page_tab_label-web": "Hébergement Web",
     "page_tab_label-games--short": "Games",
     "page_tab_label-web--short": "Web",
-    "button_label-customer-area": "Espace Client"
+    "button_label-customer-area": "Espace Client",
+    "page__home-title": "Accueil",
+    "page__home-bestoffers--title": "Nos Meilleures offres",
+    "page__home-bestoffers--button": "À partir de %{price}€/mois",
+    "page__home-bestoffers--ram": "Go de RAM DDR4 ECC",
+    "page__home-bestoffers--storage": "Go de stockage SSD NVME",
+    "page__home-bestoffers--bandwidth": "Connexion"
 }
