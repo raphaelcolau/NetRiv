@@ -9,8 +9,9 @@ export const theme = createTheme({
             contrastContainer: '#001551',
         },
         secondary: {
-            main: "#595d72",
-            contrastText: "#ffffff",
+            main: "#ffffff",
+            dark: "#f1f1f1",
+            contrastText: "#595d72",
         },
         tertiary: {
             main: "#dce1ff",
