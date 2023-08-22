@@ -1,7 +1,7 @@
 import { Box, Grid, Typography, Paper } from '@mui/material';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { theme } from '../assets/theme';
+import { useTheme } from '@mui/material/styles';
 import Button3 from '../components/Button/Button3';
 
 function BestOffers() {
@@ -52,13 +52,15 @@ function BestOffers() {
         },
     ];
     const { t } = useTranslation();
+    const theme = useTheme();
 
     return (
         <Box sx={{
             width: '100vw',
-            height: '78vh',
             paddingBottom: theme.spacing(15),
-            borderBottom: '1px solid #eaeaea',
+            [theme.breakpoints.up('laptop')]: {
+                height: '78vh',
+            }
         }}>
 
             <Typography 
@@ -130,10 +132,28 @@ function BestOffers() {
     )
 }
 
+function Carousel() {
+    const theme = useTheme();
+
+    return (
+        <Box 
+            sx={{
+                width: '100vw',
+                height: theme.spacing(55),
+                backgroundColor: theme.palette.tertiary.surface,
+            }}
+        >
+
+        </Box>
+    )
+}
+
 export default function PageHome() {
     return (
         <Box>
             <BestOffers />
+            <Carousel />
+            <div style={{height: "15vh"}}></div>
         </Box>
     )
 }
