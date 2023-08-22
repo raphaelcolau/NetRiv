@@ -30,7 +30,7 @@ export const theme = createTheme({
             contrastText: "#45464f",
         },
         outline: {
-            main: "#767680",
+            main: "#d8d8e5",
         }
     },
     breakpoints: {
