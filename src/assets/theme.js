@@ -15,6 +15,7 @@ export const theme = createTheme({
         },
         tertiary: {
             main: "#dce1ff",
+            surface: "#F5F5F9",
         },
         background: {
             default: "#fefbff",
