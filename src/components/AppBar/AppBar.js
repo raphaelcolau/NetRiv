@@ -8,32 +8,13 @@ import { useTranslation } from 'react-i18next';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
 import SelectLanguageButton from '../Button/LangSelector';
+import Logo from '../Logo/logo.js'
 
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import Button3 from '../Button/Button3';
 
-function Logo()  {
-    const theme = useTheme();
 
-    return (
-        <Box sx={{
-            height: "40px",
-            [theme.breakpoints.down('mobile_l')]: {
-                display: "none",
-            }
-        }}>
-            <img
-                src={useMediaQuery(theme.breakpoints.up('tablet')) ? "/images/logo.png" : "/images/logo-square.png"}
-                alt="NetRiv Logo"
-                style={{
-                    height: "100%",
-                    filter: theme.palette.mode === 'dark' ? 'invert(1)' : 'invert(0)',
-                }}
-            />
-        </Box>
-    )
-}
 
 export function ResponsiveAppBar() {
     const { t } = useTranslation();
