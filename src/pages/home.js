@@ -148,12 +148,93 @@ function Carousel() {
     )
 }
 
+function About(props) {
+    const theme = useTheme();
+    const { t } = useTranslation();
+    const contentWidth = theme.spacing(45);
+    const contentHeight = theme.spacing(35);
+
+    const PaperComponent = (props) => (
+        <Paper elevation={0} sx={{
+            backgroundColor: theme.palette.background.default,
+            outline: '1px solid',
+            outlineColor: theme.palette.outline.main,
+            width: contentWidth,
+            marginBottom: theme.spacing(2),
+            borderRadius: theme.spacing(3),
+            height: contentHeight,
+            overflow: 'hidden',
+        }}>
+            <Box sx={{
+                padding: theme.spacing(3),
+            }}>
+                <Typography 
+                    variant="h5"
+                    component="h1"
+                    gutterBottom
+                    sx={{
+                        fontWeight: '500',
+                    }}
+                >
+                    {props.title}
+                </Typography>
+                <Typography variant="body1" gutterBottom>{props.children}</Typography>
+            </Box>
+        </Paper>
+    )
+
+    return (
+        <Box 
+            sx={{
+                width: '100vw',
+                backgroundColor: theme.palette.background.default,
+                display: 'flex',
+                justifyContent: 'center',
+            }}
+        >
+            <Grid 
+                container
+                justifyContent="space-around"
+                gap={3}
+                sx={{
+                    paddingTop: theme.spacing(10),
+                    paddingBottom: theme.spacing(10),
+                    width: 'fit-content',
+                }}
+            >
+                <Grid item md={12} xl={4} sx={{
+                    [theme.breakpoints.up('laptop')]: {
+                        maxWidth: contentWidth,
+                    },
+                    [theme.breakpoints.down('laptop')]: {
+                        maxWidth: '85%',
+                    },
+                }}>
+                    <Typography variant="h4" component="h1" gutterBottom>{t('page__home-about--title')}</Typography>
+                    <Typography variant="body1" gutterBottom>{t('page__home-about--text1')}</Typography>
+                    <Typography variant="body1" gutterBottom>{t('page__home-about--text2')}</Typography>
+                </Grid>
+
+                <Grid item xs={12} md={4} sx={{maxWidth: contentWidth}}>
+                    <PaperComponent title={t('page__home-about--paper1-title')}>{t('page__home-about--paper1-text')}</PaperComponent>
+                    <PaperComponent title={t('page__home-about--paper2-title')}>{t('page__home-about--paper2-text')}</PaperComponent>
+                </Grid>
+
+                <Grid item xs={12} md={4} sx={{maxWidth: contentWidth}}>
+                    <PaperComponent title={t('page__home-about--paper3-title')}>{t('page__home-about--paper3-text')}</PaperComponent>
+                    <PaperComponent title={t('page__home-about--paper4-title')}>{t('page__home-about--paper4-text')}</PaperComponent>
+                </Grid>
+
+            </Grid>
+        </Box>
+    )
+}
+
 export default function PageHome() {
     return (
         <Box>
             <BestOffers />
             <Carousel />
-            <div style={{height: "15vh"}}></div>
             <About />
         </Box>
     )
