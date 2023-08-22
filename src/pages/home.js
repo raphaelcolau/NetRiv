@@ -15,7 +15,7 @@ function BestOffers() {
             bandwidth: 0.1,
             ipv4: 1,
             ipv6: 1,
-            image: '/images/offers/s.jpg'
+            image: '/images/offers/S.jpg'
         },
         {
             name: 'VPS - M',
@@ -26,7 +26,7 @@ function BestOffers() {
             bandwidth: 0.25,
             ipv4: 1,
             ipv6: 1,
-            image: '/images/offers/m.jpg'
+            image: '/images/offers/M.jpg'
         },
         {
             name: 'VPS - L',
@@ -37,7 +37,7 @@ function BestOffers() {
             bandwidth: 0.5,
             ipv4: 1,
             ipv6: 1,
-            image: '/images/offers/l.jpg'
+            image: '/images/offers/L.jpg'
         },
         {
             name: 'VPS - XL',
@@ -48,7 +48,7 @@ function BestOffers() {
             bandwidth: 1,
             ipv4: 1,
             ipv6: 1,
-            image: '/images/offers/xl.jpg'
+            image: '/images/offers/XL.jpg'
         },
     ];
     const { t } = useTranslation();
@@ -154,6 +154,7 @@ export default function PageHome() {
             <BestOffers />
             <Carousel />
             <div style={{height: "15vh"}}></div>
+            <About />
         </Box>
     )
 }
