@@ -30,7 +30,8 @@ export default function SelectLanguageButton() {
                 aria-haspopup="true"
                 onClick={handleClick}
                 sx={{
-                    fontSize: "1rem",
+                    fontSize: "1.2rem",
+                    padding: "0.5rem",
                 }}
             >
                 {i18n.language.toUpperCase()}

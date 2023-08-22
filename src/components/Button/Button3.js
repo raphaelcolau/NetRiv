@@ -6,7 +6,11 @@ const Button3 = styled(Button)(({ theme }) => ({
     textTransform: 'unset',
     fontWeight: 500,
     lineHeight: 1.5,
-    padding: theme.spacing(1.2, 2),
+    fontSize: '0.95rem',
+    padding: theme.spacing(1.5, 2.4),
+    [theme.breakpoints.down('tablet')]: {
+        padding: theme.spacing(1.5, 1.5),
+    },
     boxShadow: 'none',
     '&:hover': {
         boxShadow: 'none',

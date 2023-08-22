@@ -8,7 +8,7 @@ export default function Logo()  {
 
     return (
         <Box sx={{
-            height: "40px",
+            height: "44px",
             [theme.breakpoints.down('mobile_l')]: {
                 display: "none",
             }

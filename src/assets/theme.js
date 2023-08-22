@@ -44,4 +44,9 @@ export const theme = createTheme({
             desktop: 2565,
         }
     },
+    typography: {
+        h3: {fontSize: '3rem'},
+        h4: {fontSize: '2.5rem'},
+        body1: {fontSize: '1.1rem'},
+    },
 });

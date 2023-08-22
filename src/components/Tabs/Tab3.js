@@ -3,7 +3,8 @@ import { Tab } from '@mui/material';
 
 const Tab3 = styled(Tab)(({ theme }) => ({
     textTransform: 'unset',
-    padding: theme.spacing(0, 2.5),
+    padding: theme.spacing(0, 2.8),
+    fontSize: '0.95rem',
     [theme.breakpoints.down('tablet')]: {
         padding: theme.spacing(0, .5),
     },

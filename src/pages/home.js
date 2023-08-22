@@ -59,7 +59,7 @@ function BestOffers() {
             width: '100vw',
             paddingBottom: theme.spacing(15),
             [theme.breakpoints.up('laptop')]: {
-                height: '78vh',
+                minHeight: '80vh',
             }
         }}>
 
@@ -85,8 +85,8 @@ function BestOffers() {
                             backgroundSize: 'cover',
                             borderRadius: theme.spacing(4),
                             overflow: 'hidden',
-                            height: theme.spacing(45),
-                            width: theme.spacing(36),
+                            height: theme.spacing(52),
+                            width: theme.spacing(42),
                             color: theme.palette.primary.contrastText,
                         }}>
 
@@ -99,10 +99,10 @@ function BestOffers() {
 
                                 <Box
                                     sx={{
-                                        padding: theme.spacing(2),
+                                        padding: theme.spacing(3),
                                     }}
                                 >
-                                    <Typography variant="h3" sx={{marginBottom: theme.spacing(2)}}>{offer.name}</Typography>
+                                    <Typography variant="h3" sx={{fontSize: '3.5rem', marginBottom: theme.spacing(3)}}>{offer.name}</Typography>
                                     <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.cpu}</span> vCore @ 3,8Ghz</Typography>
                                     <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.ram}</span> {t('page__home-bestoffers--ram')} </Typography>
                                     <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.storage}</span> {t('page__home-bestoffers--storage')} </Typography>
@@ -114,8 +114,8 @@ function BestOffers() {
                                     color='secondary'
                                     sx={{
                                         position: 'absolute',
-                                        bottom: theme.spacing(2),
-                                        right: theme.spacing(2),
+                                        bottom: theme.spacing(3),
+                                        right: theme.spacing(3),
                                     }}
                                 >
                                    {/* {t('page__home-bestoffers--button', {price: offer.price})} //Ne fonctionne pas */}
