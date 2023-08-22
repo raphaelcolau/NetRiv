@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { theme } from './assets/theme';
 import { ResponsiveAppBar } from './components/AppBar/AppBar';
@@ -13,26 +13,30 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import { ResponsiveFooter } from './components/Footer/footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const router = createBrowserRouter([
-  { path: '/',      element: <PageHome /> },
-  { path: '/login', element: <div> Login </div>   },
-]);
-
-
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <I18nextProvider i18n={i18n}>
-      <ResponsiveAppBar />
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <I18nextProvider i18n={i18n}>
 
-      <CssBaseline />
+          <ResponsiveAppBar />
 
-      <RouterProvider router={router} />
-      </I18nextProvider>
-    </ThemeProvider>
+          <CssBaseline />
+
+          <Routes>
+            <Route path="/" element={<PageHome />} />
+            <Route path="/login" element={<div>Login</div>} />
+          </Routes>
+
+          <ResponsiveFooter />
+
+        </I18nextProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
