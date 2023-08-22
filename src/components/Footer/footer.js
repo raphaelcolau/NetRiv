@@ -88,11 +88,13 @@ export function ResponsiveFooter() {
                 gap: theme.spacing(8),
                 paddingTop: theme.spacing(4),
                 paddingBottom: theme.spacing(4),
+                overflowX: 'hidden',
             }}
         >
             <Box sx={{
                 display: 'flex',
                 flexDirection: 'column',
+                flexWrap: 'wrap',
                 gap: theme.spacing(2),
             }}>
                 <Logo />
