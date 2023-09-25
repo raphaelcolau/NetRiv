@@ -9,6 +9,7 @@ import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
 import SelectLanguageButton from '../Button/LangSelector';
 import Logo from '../Logo/logo.js'
+import { Link } from 'react-router-dom';
 
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
@@ -40,7 +41,14 @@ export function ResponsiveAppBar() {
                     <Box>
                         <Tabs3 value={tabIndex} onChange={e => {setTabIndex(e.target.tabIndex)}}>
                             {pages.map((page, index) => (
-                                <Tab3 key={index} tabIndex={index} label={t(page.label)} icon={page.icon} />
+                                <Tab3 
+                                    key={index}
+                                    tabIndex={index}
+                                    label={t(page.label)}
+                                    icon={page.icon}
+                                    component={Link}
+                                    to={page.path}
+                                />
                             ))}
                         </Tabs3>
                     </Box>
