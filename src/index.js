@@ -5,6 +5,7 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 import { theme } from './assets/theme';
 import { ResponsiveAppBar } from './components/AppBar/AppBar';
 import PageHome from './pages/home';
+import PageGames from './pages/games';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './assets/i18n.js';
 
@@ -29,7 +30,9 @@ root.render(
 
           <Routes>
             <Route path="/" element={<PageHome />} />
-            <Route path="/login" element={<div>Login</div>} />
+            <Route path="/games" element={<PageGames />} />
+            <Route path="/web" element={<div>Web</div>} />
+            <Route path="/vps" element={<div>vps</div>} />
           </Routes>
 
           <ResponsiveFooter />
