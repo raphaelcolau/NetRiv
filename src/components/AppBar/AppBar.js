@@ -14,6 +14,7 @@ import { Link } from 'react-router-dom';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import Button3 from '../Button/Button3';
+import { managerLink } from '../../utils/managerLink.js';
 
 
 
@@ -69,6 +70,9 @@ export function ResponsiveAppBar() {
                                     aspectRatio: "1/1",
                                     minWidth: 'unset',
                                 },
+                            }}
+                            onClick={() => {
+                                window.location.href = managerLink("clientarea", "full");
                             }}
                         >
                             {useMediaQuery(theme.breakpoints.up('mobile_l')) ? t("button_label-customer-area") : <PersonOutlineOutlinedIcon />}
