@@ -25,12 +25,18 @@ export function ResponsiveAppBar() {
 
     const suffix = useMediaQuery(theme.breakpoints.down('mobile_l')) ? "--short" : "";
 
-    const pages = [
+    const pages = React.useMemo(() => [
         { label: "page_tab_label-home", path: "/", icon: <FiberManualRecordIcon sx={{fontSize: 16}} /> },
         { label: "page_tab_label-vps", path: "/vps", icon: <FiberManualRecordIcon sx={{fontSize: 16}} /> },
         { label: "page_tab_label-games" + suffix, path: "/games", icon: <FiberManualRecordIcon sx={{fontSize: 16}} /> },
         { label: "page_tab_label-web" + suffix, path: "/web", icon: <FiberManualRecordIcon sx={{fontSize: 16}} /> },
-    ]
+    ], [suffix]);
+
+    React.useEffect(() => {
+        const path = window.location.pathname;
+        const index = pages.findIndex(page => page.path === path);
+        setTabIndex(index);
+    }, [tabIndex, pages]);
 
     return (
         <StyledAppBar position="static">
