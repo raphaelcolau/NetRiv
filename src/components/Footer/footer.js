@@ -1,11 +1,12 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo/logo';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import { managerLink } from '../../utils/managerLink';
 
 
 function ListColumn({ title, items }) {
@@ -31,6 +32,19 @@ function ListColumn({ title, items }) {
                     color: theme.palette.primary.main,
                     marginLeft: theme.spacing(1.5),
                 }}>
+                    {item.external ? 
+                    <a href={managerLink(item.link, 'full')} style={{textDecoration: 'none', color: theme.palette.primary.main}}>
+                        <Typography variant='subtitle1' sx={{
+                            fontWeight: 500,
+                            textAlign: 'start',
+                            '&:hover': {
+                                textDecoration: 'underline',
+                            },
+                        }}>
+                            • {t("footer__text-" + item.name)}
+                        </Typography>
+                    </a>
+                    :
                     <Link to={item.link} style={{textDecoration: 'none', color: theme.palette.primary.main}}>
                         <Typography variant='subtitle1' sx={{
                             fontWeight: 500,
@@ -42,6 +56,7 @@ function ListColumn({ title, items }) {
                             • {t("footer__text-" + item.name)}
                         </Typography>
                     </Link>
+                    }
                 </Box>
             ))}
         </Box>
@@ -78,73 +93,86 @@ export function ResponsiveFooter() {
     ]
 
     return (
-        <Box 
+        <Grid 
+            container
+            spacing={2}
             sx={{
                 width: '100vw',
                 backgroundColor: theme.palette.tertiary.surface,
                 display: 'flex',
-                justifyContent: 'center',
+                justifyContent: 'space-evenly',
                 alignItems: 'center',
-                gap: theme.spacing(8),
                 paddingTop: theme.spacing(4),
                 paddingBottom: theme.spacing(4),
                 overflowX: 'hidden',
+                [theme.breakpoints.down('mobile_l')]: {
+
+                },
             }}
         >
-            <Box sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                flexWrap: 'wrap',
-                gap: theme.spacing(2),
-            }}>
-                <Logo />
+
+            <Grid item lg={12}>
                 <Box sx={{
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: theme.spacing(0.5),
-                    marginLeft: theme.spacing(1),
+                    flexWrap: 'wrap',
+                    gap: theme.spacing(2),
                 }}>
-                    {social.map((item, index) => (
-                        <a key={index} href={item.link} target="_blank" rel="noreferrer" style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            textDecoration: 'none',
-                            color: theme.palette.primary.main,
-                            '&:hover': {
-                                textDecoration: 'underline',
-                            },
-                        }} >
-                            {item.icon}
-                            <span>{item.name}</span>
-                        </a>
-                    ))}
+                    <Logo />
+                    <Box sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: theme.spacing(0.5),
+                        marginLeft: theme.spacing(1),
+                    }}>
+                        {social.map((item, index) => (
+                            <a key={index} href={item.link} target="_blank" rel="noreferrer" style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                textDecoration: 'none',
+                                color: theme.palette.primary.main,
+                                '&:hover': {
+                                    textDecoration: 'underline',
+                                },
+                            }} >
+                                {item.icon}
+                                <span>{item.name}</span>
+                            </a>
+                        ))}
+                    </Box>
                 </Box>
-            </Box>
-            
-            <ListColumn title='netriv' items={[
-                {name: 'news',                  link: 'news'},
-                {name: 'about',                 link: 'about'},
-                {name: 'legal',                 link: 'legal'},
-                {name: 'legal--tos',           link: 'terms-of-service'},
-                {name: 'legal--privacy',        link: 'privacy-policy'},
-            ]}/>
+            </Grid>
 
-            <ListColumn title='products' items={[
-                {name: 'products--vps',         link: 'vps'},
-                {name: 'products--games',       link: 'games'},
-                {name: 'products--web',         link: 'web'},
-                {name: 'products--dedicated',   link: 'dedicated'},
-                {name: 'products--mail',        link: 'mail'},
-            ]}/>
+            <Grid item md={12}>
+                <ListColumn title='netriv' items={[
+                    {name: 'news',                  link: 'index.php/announcements', external: true},
+                    {name: 'about',                 link: 'about',              external: false},
+                    {name: 'legal',                 link: 'legal',              external: false},
+                    {name: 'legal--tos',            link: 'terms-of-service',   external: false},
+                    {name: 'legal--privacy',        link: 'privacy-policy',     external: false},
+                ]}/>
+            </Grid> 
 
-            <ListColumn title='support' items={[
-                {name: 'support--contact',      link: 'contact'},
-                {name: 'support--faq',          link: 'faq'},
-                {name: 'support--status',       link: 'status'},
-                {name: 'support--helpcenter',   link: 'help'},
-                {name: 'support--ticket',       link: 'ticket'},
-            ]}/>
+            <Grid item md={12}>
+                <ListColumn title='products' items={[
+                    {name: 'products--vps',         link: 'vps',                external: false},
+                    {name: 'products--games',       link: 'games',              external: false},
+                    {name: 'products--web',         link: 'web',                external: false},
+                    {name: 'products--dedicated',   link: 'dedicated',          external: false},
+                    {name: 'products--mail',        link: 'mail',               external: false},
+                ]}/>
+            </Grid> 
 
-        </Box>
+            <Grid item md={12}>
+                <ListColumn title='support' items={[
+                    {name: 'support--contact',      link: 'contact.php',        external: true},
+                    {name: 'support--faq',          link: 'faq',                external: false},
+                    {name: 'support--status',       link: 'serverstatus.php',   external: true},
+                    {name: 'support--helpcenter',   link: 'index.php/knowledgebase', external: true},
+                    {name: 'support--ticket',       link: 'supporttickets.php', external: true},
+                ]}/>
+            </Grid> 
+
+        </Grid>
     )
 }
