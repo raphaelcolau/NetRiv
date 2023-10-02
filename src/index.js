@@ -16,6 +16,10 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { ResponsiveFooter } from './components/Footer/footer';
 import PageVPS from './pages/vps';
+import PageSOON from './pages/soon';
+import Page404 from './pages/404';
+// import PageLegal from './pages/legal';
+import PageTOS from './pages/tos';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -32,8 +36,12 @@ root.render(
           <Routes>
             <Route path="/" element={<PageHome />} />
             <Route path="/games" element={<PageGames />} />
-            <Route path="/web" element={<div>Web</div>} />
+            <Route path="/web" element={<PageSOON />} />
             <Route path="/vps" element={<PageVPS />} />
+            {/* <Route path="/legal" element={<PageLegal />} /> */}
+            <Route path="/legal" element={<PageSOON />} />
+            <Route path="/terms-of-service" element={<PageTOS />} />
+            <Route path="*" element={<Page404 />} />
           </Routes>
 
           <ResponsiveFooter />
