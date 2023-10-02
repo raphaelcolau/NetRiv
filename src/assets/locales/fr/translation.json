@@ -43,5 +43,21 @@
     "page__home-about--paper3-title": "Support réactif",
     "page__home-about--paper3-text": "Notre équipe technique est joignable 7/7J par ticket afin d'apporter une réponse réactive à toutes les demandes de nos clients.",
     "page__home-about--paper4-title": "Protection DDoS",
-    "page__home-about--paper4-text": "Nos infrastructures bénéficient d'une protection contre les attaques DDoS basée sur la technologie de mitigation F5 Distributed Cloud Services."
+    "page__home-about--paper4-text": "Nos infrastructures bénéficient d'une protection contre les attaques DDoS basée sur la technologie de mitigation F5 Distributed Cloud Services.",
+    "page__games-group--minecraft": "Serveurs Minecraft",
+    "page__games-offer-minecraft--unlimited-slot": "Slots unlimités",
+    "page__games-offer-minecraft--web": "Hébergement Web de ",
+    "page__games-offer-minecraft--bdd": "BDD MySQL de ",
+    "page__games-offer-minecraft--giga": "Go",
+    "page__games-offer-specs--processor": "Processeur",
+    "page__games-offer-specs--antiddos": "Anti-DDoS",
+    "page__games-offer-specs--storage": "Stockage",
+    "page__games-offer-specs--pannel": "Panneau de controle",
+    "page__games-offer-specs--processor-desc": "Processeur AMD Ryzen 9 3900X, 12 coeurs / 24 threads @ 3.8 GHz / 4.6 GHz (Turbo)",
+    "page__games-offer-specs--antiddos-desc": "Protection DDoS ARBOR et Juniper Networks (480 Gbps) inclus avec chaque serveur",
+    "page__games-offer-specs--storage-desc": "Stockage SSD 100% NVMe (3x plus rapide) avec protection RAID 10",
+    "page__games-offer-specs--pannel-desc": "Panneau de controle Pterodactyl (v1.11) performant et complet",
+    "page__games-description-standard": "Adapté aux petits projets, serveurs de test ou de développement avec un nombre de joueurs limité. Idéal pour les petits serveurs Minecraft.",
+    "page__games-description-advanced": "Adapté aux projets de taille moyenne avec un nombre de joueurs moyen. Idéal pour les serveurs Minecraft avec mods.",
+    "page__games-description-advanced-plus": "Adapté aux projets de grande envergure avec un nombre de joueurs important. Idéal pour les serveurs Minecraft avec mods et plugins."
 }
