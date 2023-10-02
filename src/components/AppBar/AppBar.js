@@ -35,12 +35,26 @@ export function ResponsiveAppBar() {
     React.useEffect(() => {
         const path = window.location.pathname;
         const index = pages.findIndex(page => page.path === path);
-        setTabIndex(index);
+        if (index !== -1) setTabIndex(index);
+        else setTabIndex(0);
     }, [tabIndex, pages]);
 
     return (
-        <StyledAppBar position="static">
-            <Container maxWidth='false'>
+        <StyledAppBar 
+            position="static"
+            sx={{
+                width: '100vw',
+                overflow: 'hidden',
+            }}
+        >
+            <Container 
+                maxWidth='false'
+                sx={{
+                    [theme.breakpoints.down('mobile_m')]: {
+                        padding: 0,
+                    }
+                }}
+            >
                 <StyledToolbar disableGutters>
                     
                     <Logo />
@@ -66,7 +80,9 @@ export function ResponsiveAppBar() {
                         gap: theme.spacing(1),
                         alignItems: "center",
                     }}>
-                        <SelectLanguageButton />
+
+                        {useMediaQuery(theme.breakpoints.down('mobile_m')) ? null : <SelectLanguageButton />}
+
                         <Button3
                             variant="contained"
                             color="primary"
@@ -78,11 +94,12 @@ export function ResponsiveAppBar() {
                                 },
                             }}
                             onClick={() => {
-                                window.location.href = managerLink("clientarea", "full");
+                                window.location.href = managerLink("clientarea.php", "full");
                             }}
                         >
                             {useMediaQuery(theme.breakpoints.up('mobile_l')) ? t("button_label-customer-area") : <PersonOutlineOutlinedIcon />}
                         </Button3>
+                        
                     </Box>
 
 
