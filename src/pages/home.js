@@ -3,52 +3,58 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@mui/material/styles';
 import Button3 from '../components/Button/Button3';
+import PaperComponent from '../components/Paper/PaperComponent';
+import { managerLink } from '../utils/managerLink';
 
 function BestOffers() {
     const offers = [
         {
-            name: 'VPS - S',
+            name: 'VPS - 2',
             price: 4.99,
-            cpu: 2,
+            cpu: 1,
             ram: 2,
-            storage: 20,
-            bandwidth: 0.1,
+            storage: 40,
+            bandwidth: 1,
             ipv4: 1,
             ipv6: 1,
-            image: '/images/offers/S.jpg'
+            image: '/images/offers/S.jpg',
+            cartLink: 'index.php/store/vps/vps-2',
         },
         {
-            name: 'VPS - M',
+            name: 'VPS - 4',
             price: 9.99,
             cpu: 4,
             ram: 4,
-            storage: 40,
-            bandwidth: 0.25,
+            storage: 60,
+            bandwidth: 1,
             ipv4: 1,
             ipv6: 1,
-            image: '/images/offers/M.jpg'
+            image: '/images/offers/M.jpg',
+            cartLink: 'index.php/store/vps/vps-4',
         },
         {
-            name: 'VPS - L',
+            name: 'VPS - 8',
             price: 19.99,
-            cpu: 8,
+            cpu: 4,
             ram: 8,
             storage: 80,
-            bandwidth: 0.5,
+            bandwidth: 1,
             ipv4: 1,
             ipv6: 1,
-            image: '/images/offers/L.jpg'
+            image: '/images/offers/L.jpg',
+            cartLink: 'index.php/store/vps/vps-8',
         },
         {
-            name: 'VPS - XL',
+            name: 'VPS - 16',
             price: 39.99,
-            cpu: 16,
+            cpu: 4,
             ram: 16,
             storage: 160,
             bandwidth: 1,
             ipv4: 1,
             ipv6: 1,
-            image: '/images/offers/XL.jpg'
+            image: '/images/offers/XL.jpg',
+            cartLink: 'index.php/store/vps/vps-16',
         },
     ];
     const { t } = useTranslation();
@@ -117,6 +123,7 @@ function BestOffers() {
                                         bottom: theme.spacing(3),
                                         right: theme.spacing(3),
                                     }}
+                                    href={managerLink(offer.cartLink, "full")}
                                 >
                                    {/* {t('page__home-bestoffers--button', {price: offer.price})} //Ne fonctionne pas */}
                                    {t('page__home-bestoffers--button').replace('%{price}', offer.price)}
@@ -152,6 +159,7 @@ function About(props) {
     const theme = useTheme();
     const { t } = useTranslation();
     const contentWidth = theme.spacing(45);
+
 
     return (
         <Box 
