@@ -105,7 +105,7 @@ export function ResponsiveFooter() {
                     marginLeft: theme.spacing(1),
                 }}>
                     {social.map((item, index) => (
-                        <a href={item.link} target="_blank" rel="noreferrer" style={{
+                        <a key={index} href={item.link} target="_blank" rel="noreferrer" style={{
                             display: 'flex',
                             alignItems: 'center',
                             textDecoration: 'none',
