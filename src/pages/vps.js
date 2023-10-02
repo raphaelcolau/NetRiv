@@ -30,10 +30,9 @@ function Offers(props) {
                     fontWeight: '500',
                     marginTop: theme.spacing(15),
                     marginBottom: theme.spacing(5),
-                    textTransform: 'capitalize',
                 }}
             >
-                {t('page__games-group--' + props.name)}
+                {t('page__vps-group--' + props.name)}
             </Typography>
 
             <Grid container spacing={2} justifyContent='space-around' alignItems="stretch">
@@ -62,12 +61,10 @@ function Offers(props) {
                                     }}
                                 >
                                     <Typography variant="h3" sx={{fontSize: '3.5rem', marginBottom: theme.spacing(3)}}>{offer.name}</Typography>
-                                    <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.ram}</span> {t('page__games-bestoffers--ram')} </Typography>
                                     <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.cpu}</span> vCore @ 3,8Ghz</Typography>
-                                    <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.storage}</span> {t('page__games-bestoffers--storage')} </Typography>
-                                    <Typography variant="body1">● <span style={{fontWeight: 700}}>{t('page__games-offer-minecraft--unlimited-slot')}</span></Typography>
-                                    <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.bdd}</span> {t('page__games-offer-minecraft--bdd')} <span style={{fontWeight: 700}}>{offer.bddSize} {t('page__games-offer-minecraft--giga')} </span></Typography>
-                                    {offer.web ? <Typography variant="body1">●  {t('page__games-offer-minecraft--web')} <span style={{fontWeight: 700}}>{offer.webSize} {t('page__games-offer-minecraft--giga')}</span> </Typography> : null}
+                                    <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.ram}</span> {t('page__home-bestoffers--ram')} </Typography>
+                                    <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.storage}</span> {t('page__home-bestoffers--storage')} </Typography>
+                                    <Typography variant="body1">● {t('page__home-bestoffers--bandwidth')} <span style={{fontWeight: 700}}>{offer.bandwidth >= 1 ? 1 : offer.bandwidth * 1000}</span> {offer.bandwidth >= 1 ? "Gbps" : "Mbps"} </Typography>
                                 </Box>
 
                                 <Button3 
@@ -80,7 +77,8 @@ function Offers(props) {
                                     }}
                                     href={managerLink(offer.cartLink, "full")}
                                 >
-                                {t('page__home-bestoffers--button').replace('%{price}', offer.price)}
+                                   {/* {t('page__home-bestoffers--button', {price: offer.price})} //Ne fonctionne pas */}
+                                   {t('page__home-bestoffers--button').replace('%{price}', offer.price)}
                                 </Button3>
 
                             </Box>
@@ -136,53 +134,56 @@ function Description() {
 export default function PageVPS() {
     const products = [
         {
-            group: "minecraft",
+            group: "vps",
             offers: [
                 {
-                    name: "Standard",
-                    ram: "8",
-                    cpu: "2",
-                    storage: "30",
-                    storageType: "SSD NVMe",
-                    bdd: "1",
-                    bddType: "MySQL",
-                    bddSize: "2",
-                    web: true,
-                    webSize: "10",
-                    price: '10',
-                    cartLink: "index.php/store/minecraft/minecraft-standard",
-                    image: "/images/offers/S.jpg",
+                    name: 'VPS - 2',
+                    price: 4.99,
+                    cpu: 1,
+                    ram: 2,
+                    storage: 40,
+                    bandwidth: 1,
+                    ipv4: 1,
+                    ipv6: 1,
+                    image: '/images/offers/S.jpg',
+                    cartLink: 'index.php/store/vps/vps-2',
                 },
                 {
-                    name: "Advanced",
-                    ram: "10",
-                    cpu: "2",
-                    storage: "60",
-                    storageType: "SSD NVMe",
-                    bdd: "2",
-                    bddType: "MySQL",
-                    bddSize: "2",
-                    web: true,
-                    webSize: "10",
-                    price: '15',
-                    cartLink: "index.php/store/minecraft/minecraft-advanced",
-                    image: "/images/offers/L.jpg",
+                    name: 'VPS - 4',
+                    price: 9.99,
+                    cpu: 4,
+                    ram: 4,
+                    storage: 60,
+                    bandwidth: 1,
+                    ipv4: 1,
+                    ipv6: 1,
+                    image: '/images/offers/M.jpg',
+                    cartLink: 'index.php/store/vps/vps-4',
                 },
                 {
-                    name: "Advanced+",
-                    ram: "12",
-                    cpu: "3",
-                    storage: "80",
-                    storageType: "SSD NVMe",
-                    bdd: "3",
-                    bddType: "MySQL",
-                    bddSize: "2",
-                    web: true,
-                    webSize: "10",
-                    price: '20',
-                    cartLink: "index.php/store/minecraft/minecraft-advanced-plus",
-                    image: "/images/offers/XL.jpg",
-                }
+                    name: 'VPS - 8',
+                    price: 19.99,
+                    cpu: 4,
+                    ram: 8,
+                    storage: 80,
+                    bandwidth: 1,
+                    ipv4: 1,
+                    ipv6: 1,
+                    image: '/images/offers/L.jpg',
+                    cartLink: 'index.php/store/vps/vps-8',
+                },
+                {
+                    name: 'VPS - 16',
+                    price: 39.99,
+                    cpu: 4,
+                    ram: 16,
+                    storage: 160,
+                    bandwidth: 1,
+                    ipv4: 1,
+                    ipv6: 1,
+                    image: '/images/offers/XL.jpg',
+                    cartLink: 'index.php/store/vps/vps-16',
+                },
             ]
         }
     ]
