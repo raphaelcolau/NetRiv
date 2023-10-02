@@ -193,7 +193,7 @@ export default function PageVPS() {
             {products.map((product, index) => {
                 return <Offers name={product.group} offers={product.offers} key={index} />
             })}
-            <Description />
+            {/* <Description /> */}
             <Specs />
         </Box>
     )
