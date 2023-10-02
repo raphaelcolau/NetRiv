@@ -152,36 +152,6 @@ function About(props) {
     const theme = useTheme();
     const { t } = useTranslation();
     const contentWidth = theme.spacing(45);
-    const contentHeight = theme.spacing(35);
-
-    const PaperComponent = (props) => (
-        <Paper elevation={0} sx={{
-            backgroundColor: theme.palette.background.default,
-            outline: '1px solid',
-            outlineColor: theme.palette.outline.main,
-            width: contentWidth,
-            marginBottom: theme.spacing(2),
-            borderRadius: theme.spacing(3),
-            height: contentHeight,
-            overflow: 'hidden',
-        }}>
-            <Box sx={{
-                padding: theme.spacing(3),
-            }}>
-                <Typography 
-                    variant="h5"
-                    component="h1"
-                    gutterBottom
-                    sx={{
-                        fontWeight: '500',
-                    }}
-                >
-                    {props.title}
-                </Typography>
-                <Typography variant="body1" gutterBottom>{props.children}</Typography>
-            </Box>
-        </Paper>
-    )
 
     return (
         <Box 
