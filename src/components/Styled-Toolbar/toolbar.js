@@ -8,7 +8,9 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     "& *": {
         textTransform: 'unset',
     },
-    [theme.breakpoints.up('sm')]: {},
+    [theme.breakpoints.down('mobile_l')]: {
+        justifyContent: 'space-around',
+    },
 }));
 
 export default StyledToolbar;
