@@ -6,34 +6,39 @@ export default function PageLegal() {
     const theme = useTheme();
     const {t} = useTranslation();
 
-    const elements = [{name: 'intro'}]
+    const elements = [
+        'info',
+    ]
 
     return (
         <Box 
             sx={{
                 display: 'flex',
+                justifyContent: 'center',
                 flexDirection: 'column',
-                marginLeft: theme.spacing(20),
-                marginRight: theme.spacing(20),
+                alignItems: 'center',
                 marginTop: theme.spacing(15),
                 marginBottom: theme.spacing(15),
             }}
         >
-            <Typography variant="h5">{t('page__legal--title')}:</Typography>
-            <Divider sx={{marginBottom: theme.spacing(3)}} />
-            {elements.map((element, index) => {
-                const texts = t('page__legal--content-'+element.name,  {returnObjects: true}).split('\n');
-                console.log(texts)
-
-                return (
-                    <Box>
-                        <Typography variant="h6" key={index}>{t('page__legal--content-'+element.name+'-title')}</Typography>
-                        {texts.map((text, index) => (
-                            <Typography variant="body1" key={index}>{text}</Typography>
-                        ))}
-                    </Box>
-                )
-            })}
+            <Box sx={{
+                maxWidth: '80vw',
+                display: 'flex',
+                flexDirection: 'column',
+            }}>
+                <Typography variant="h5">{t('page__legal--title')}:</Typography>
+                <Divider sx={{marginBottom: theme.spacing(3)}} />
+                {elements.map((element, index) => {
+                    const texts = t('page__legal--content-'+element,  {returnObjects: true}).split('\n');
+                    return (
+                        <Box key={index} sx={{marginBottom: theme.spacing(2)}}>
+                            {texts.map((text, index) => (
+                                <Typography variant="body1" key={index}>{text}</Typography>
+                            ))}
+                        </Box>
+                    )
+                })}
+            </Box>
         </Box>
     )
 }

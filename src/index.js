@@ -39,6 +39,7 @@ root.render(
             <Route path="/web" element={<PageSOON />} />
             <Route path="/vps" element={<PageVPS />} />
             {/* <Route path="/legal" element={<PageLegal />} /> */}
+            <Route path="/legal" element={<PageLegal />} />
             <Route path="/legal" element={<PageSOON />} />
             <Route path="/terms-of-service" element={<PageTOS />} />
             <Route path="*" element={<Page404 />} />
