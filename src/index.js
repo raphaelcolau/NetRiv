@@ -18,7 +18,7 @@ import { ResponsiveFooter } from './components/Footer/footer';
 import PageVPS from './pages/vps';
 import PageSOON from './pages/soon';
 import Page404 from './pages/404';
-// import PageLegal from './pages/legal';
+import PageLegal from './pages/legal';
 import PageTOS from './pages/tos';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
