@@ -66,8 +66,8 @@ function Offers(props) {
                                     <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.cpu}</span> vCore @ 3,8Ghz</Typography>
                                     <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.storage}</span> {t('page__home-bestoffers--storage')} </Typography>
                                     <Typography variant="body1">● <span style={{fontWeight: 700}}>{t('page__games-offer-minecraft--unlimited-slot')}</span></Typography>
-                                    <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.bdd}</span> {t('page__games-offer-minecraft--bdd')} <span style={{fontWeight: 700}}>{offer.bddSize} {t('page__games-offer-minecraft--giga')} </span></Typography>
-                                    {offer.web ? <Typography variant="body1">●  {t('page__games-offer-minecraft--web')} <span style={{fontWeight: 700}}>{offer.webSize} {t('page__games-offer-minecraft--giga')}</span> </Typography> : null}
+                                    {/* <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.bdd}</span> {t('page__games-offer-minecraft--bdd')} <span style={{fontWeight: 700}}>{offer.bddSize} {t('page__games-offer-minecraft--giga')} </span></Typography> */}
+                                    {/* {offer.web ? <Typography variant="body1">●  {t('page__games-offer-minecraft--web')} <span style={{fontWeight: 700}}>{offer.webSize} {t('page__games-offer-minecraft--giga')}</span> </Typography> : null} */}
                                 </Box>
 
                                 <Button3 
