@@ -5,6 +5,7 @@ import { useTheme } from '@mui/material/styles';
 import Button3 from '../components/Button/Button3';
 import PaperComponent from '../components/Paper/PaperComponent';
 import { managerLink } from '../utils/managerLink';
+import Carousel from '../components/Carousel/carousel3';
 
 function BestOffers() {
     const offers = [
@@ -139,7 +140,7 @@ function BestOffers() {
     )
 }
 
-function Carousel() {
+function CarouselBox() {
     const theme = useTheme();
 
     return (
@@ -150,7 +151,7 @@ function Carousel() {
                 backgroundColor: theme.palette.tertiary.surface,
             }}
         >
-
+            <Carousel />
         </Box>
     )
 }
@@ -212,7 +213,7 @@ export default function PageHome() {
     return (
         <Box>
             <BestOffers />
-            <Carousel />
+            {/* <CarouselBox /> */}
             <About />
         </Box>
     )
