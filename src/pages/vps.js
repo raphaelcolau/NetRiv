@@ -113,6 +113,7 @@ function Specs() {
     )
 }
 
+// eslint-disable-next-line no-unused-vars
 function Description() {
     const theme = useTheme();
 
