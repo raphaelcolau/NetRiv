@@ -51,8 +51,9 @@ root.render(
           <Routes>
             <Route path="/" element={<PageHome />} />
             <Route path="/games" element={<PageGames />} />
-            <Route path="/web" element={<PageSOON />} />
             <Route path="/vps" element={<PageVPS />} />
+            <Route path="/web" element={<PageSOON />} />
+            <Route path="/dedicated" element={<PageSOON />} />
             <Route path="/legal" element={<PageLegal />} />
             <Route path="/legal" element={<PageSOON />} />
             <Route path="/terms-of-service" element={<PageTOS />} />
@@ -64,6 +65,7 @@ root.render(
         </I18nextProvider>
       </ThemeProvider>
     </BrowserRouter>
+    : <Placeholder />}
   </React.StrictMode>
 );
 
