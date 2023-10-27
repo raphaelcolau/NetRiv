@@ -23,8 +23,23 @@ import PageTOS from './pages/tos';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+function Placeholder() {
+  return (
+    <div style={{
+      width: '100vw',
+      height: '100vh',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }}>
+      <h1>Coming soon...</h1>
+    </div>
+  )
+}
+
 root.render(
   <React.StrictMode>
+    { new Date() < new Date('2023-11-15T12:00:00') ?
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <I18nextProvider i18n={i18n}>
