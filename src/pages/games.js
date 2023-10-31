@@ -151,7 +151,7 @@ export default function PageGames() {
                     webSize: "10",
                     price: '10',
                     cartLink: "index.php/store/minecraft/minecraft-standard",
-                    image: "/images/offers/S.jpg",
+                    image: "/images/offers/standard.jpg",
                 },
                 {
                     name: "Advanced",
@@ -166,7 +166,7 @@ export default function PageGames() {
                     webSize: "10",
                     price: '15',
                     cartLink: "index.php/store/minecraft/minecraft-advanced",
-                    image: "/images/offers/L.jpg",
+                    image: "/images/offers/advanced.jpg",
                 },
                 {
                     name: "Advanced+",
@@ -181,7 +181,7 @@ export default function PageGames() {
                     webSize: "10",
                     price: '20',
                     cartLink: "index.php/store/minecraft/minecraft-advanced-plus",
-                    image: "/images/offers/XL.jpg",
+                    image: "/images/offers/advancedplus.jpg",
                 }
             ]
         }
