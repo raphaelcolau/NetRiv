@@ -7,6 +7,7 @@ import { managerLink } from '../utils/managerLink';
 import PaperComponent from '../components/Paper/PaperComponent';
 import { t } from 'i18next';
 import { motion } from 'framer-motion';
+import { ArrowIndicator } from '../components/Arrow/indicator';
 
 function Offers(props) {
     const offers = props.offers;
@@ -203,6 +204,7 @@ export default function PageGames() {
             {products.map((product, index) => {
                 return <Offers name={product.group} offers={product.offers} key={index} />
             })}
+            <ArrowIndicator />
             <Description />
             <Specs />
         </Box>

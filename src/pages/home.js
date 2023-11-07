@@ -7,6 +7,7 @@ import PaperComponent from '../components/Paper/PaperComponent';
 import { managerLink } from '../utils/managerLink';
 import Carousel from '../components/Carousel/carousel3';
 import { motion } from 'framer-motion';
+import { ArrowIndicator } from '../components/Arrow/indicator';
 
 function BestOffers() {
     const offers = [
@@ -220,11 +221,14 @@ function About(props) {
     )
 }
 
+
+
 export default function PageHome() {
     return (
         <Box>
             <BestOffers />
             {/* <CarouselBox /> */}
+            <ArrowIndicator />
             <About />
         </Box>
     )
