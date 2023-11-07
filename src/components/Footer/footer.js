@@ -45,7 +45,13 @@ function ListColumn({ title, items }) {
                         </Typography>
                     </a>
                     :
-                    <Link to={item.link} style={{textDecoration: 'none', color: theme.palette.primary.main}}>
+                    <Link 
+                        to={item.link}
+                        style={{textDecoration: 'none', color: theme.palette.primary.main}}
+                        onClick={() => {
+                            window.scrollTo(0, 0);
+                        }}
+                    >
                         <Typography variant='subtitle1' sx={{
                             fontWeight: 500,
                             textAlign: 'start',
