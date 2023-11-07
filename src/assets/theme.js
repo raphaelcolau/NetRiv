@@ -41,7 +41,7 @@ export const theme = createTheme({
             mobile_l: 430,
             tablet: 770,
             laptop: 1030,
-            laptop_l: 1444,
+            laptop_l: 1440,
             desktop: 2565,
         }
     },
