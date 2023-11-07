@@ -6,6 +6,7 @@ import Button3 from '../components/Button/Button3';
 import PaperComponent from '../components/Paper/PaperComponent';
 import { managerLink } from '../utils/managerLink';
 import Carousel from '../components/Carousel/carousel3';
+import { motion } from 'framer-motion';
 
 function BestOffers() {
     const offers = [
@@ -86,53 +87,63 @@ function BestOffers() {
 
             <Grid container spacing={2} justifyContent='space-around' alignItems="stretch">
                 {offers.map((offer, index) => (
-                    <Grid item xs={6} md={3} key={index}>
-                        <Paper elevation={0} sx={{
-                            backgroundImage: `url(${offer.image})`,
-                            backgroundSize: 'cover',
-                            borderRadius: theme.spacing(4),
-                            overflow: 'hidden',
-                            height: theme.spacing(52),
-                            width: theme.spacing(42),
-                            color: theme.palette.primary.contrastText,
-                        }}>
-
-                            <Box sx={{
-                                height: '100%',
-                                width: '100%',
-                                position: 'relative',
+                    <motion.div
+                        key={index}
+                        whileHover={{
+                            scale: 1.05,
+                            transition: {
+                                duration: 0.3,
+                            }
+                        }}
+                    >
+                        <Grid item xs={6} md={3}>
+                            <Paper elevation={0} sx={{
+                                backgroundImage: `url(${offer.image})`,
+                                backgroundSize: 'cover',
+                                borderRadius: theme.spacing(4),
+                                overflow: 'hidden',
+                                height: theme.spacing(52),
+                                width: theme.spacing(42),
+                                color: theme.palette.primary.contrastText,
                             }}>
 
+                                <Box sx={{
+                                    height: '100%',
+                                    width: '100%',
+                                    position: 'relative',
+                                }}>
 
-                                <Box
-                                    sx={{
-                                        padding: theme.spacing(3),
-                                    }}
-                                >
-                                    <Typography variant="h3" sx={{fontSize: '3.5rem', marginBottom: theme.spacing(3)}}>{offer.name}</Typography>
-                                    <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.cpu}</span> vCore @ 3,8Ghz</Typography>
-                                    <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.ram}</span> {t('page__home-bestoffers--ram')} </Typography>
-                                    <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.storage}</span> {t('page__home-bestoffers--storage')} </Typography>
-                                    <Typography variant="body1">● {t('page__home-bestoffers--bandwidth')} <span style={{fontWeight: 700}}>{offer.bandwidth >= 1 ? 1 : offer.bandwidth * 1000}</span> {offer.bandwidth >= 1 ? "Gbps" : "Mbps"} </Typography>
+
+                                    <Box
+                                        sx={{
+                                            padding: theme.spacing(3),
+                                        }}
+                                    >
+                                        <Typography variant="h3" sx={{fontSize: '3.5rem', marginBottom: theme.spacing(3)}}>{offer.name}</Typography>
+                                        <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.cpu}</span> vCore @ 3,8Ghz</Typography>
+                                        <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.ram}</span> {t('page__home-bestoffers--ram')} </Typography>
+                                        <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.storage}</span> {t('page__home-bestoffers--storage')} </Typography>
+                                        <Typography variant="body1">● {t('page__home-bestoffers--bandwidth')} <span style={{fontWeight: 700}}>{offer.bandwidth >= 1 ? 1 : offer.bandwidth * 1000}</span> {offer.bandwidth >= 1 ? "Gbps" : "Mbps"} </Typography>
+                                    </Box>
+
+                                    <Button3 
+                                        variant='contained'
+                                        color='secondary'
+                                        sx={{
+                                            position: 'absolute',
+                                            bottom: theme.spacing(3),
+                                            right: theme.spacing(3),
+                                        }}
+                                        href={managerLink(offer.cartLink, "full")}
+                                    >
+                                    {/* {t('page__home-bestoffers--button', {price: offer.price})} //Ne fonctionne pas */}
+                                    {t('page__home-bestoffers--button').replace('%{price}', offer.price)}
+                                    </Button3>
+
                                 </Box>
-
-                                <Button3 
-                                    variant='contained'
-                                    color='secondary'
-                                    sx={{
-                                        position: 'absolute',
-                                        bottom: theme.spacing(3),
-                                        right: theme.spacing(3),
-                                    }}
-                                    href={managerLink(offer.cartLink, "full")}
-                                >
-                                   {/* {t('page__home-bestoffers--button', {price: offer.price})} //Ne fonctionne pas */}
-                                   {t('page__home-bestoffers--button').replace('%{price}', offer.price)}
-                                </Button3>
-
-                            </Box>
-                        </Paper>
-                    </Grid>
+                            </Paper>
+                        </Grid>
+                    </motion.div>
                 ))}
             </Grid>
 
