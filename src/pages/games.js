@@ -162,7 +162,7 @@ export default function PageGames() {
                     web: true,
                     webSize: "10",
                     price: '10',
-                    cartLink: "index.php/store/minecraft/minecraft-standard",
+                    cartLink: "order-steps/server/112",
                     image: "/images/offers/standard.jpg",
                 },
                 {
@@ -177,7 +177,7 @@ export default function PageGames() {
                     web: true,
                     webSize: "10",
                     price: '15',
-                    cartLink: "index.php/store/minecraft/minecraft-advanced",
+                    cartLink: "order-steps/server/113",
                     image: "/images/offers/advanced.jpg",
                 },
                 {
@@ -192,7 +192,7 @@ export default function PageGames() {
                     web: true,
                     webSize: "10",
                     price: '20',
-                    cartLink: "index.php/store/minecraft/minecraft-advanced-plus",
+                    cartLink: "order-steps/server/114",
                     image: "/images/offers/advancedplus.jpg",
                 }
             ]

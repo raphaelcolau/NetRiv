@@ -159,7 +159,7 @@ export default function PageVPS() {
                     ipv4: 1,
                     ipv6: 1,
                     image: '/images/offers/vps4.jpg',
-                    cartLink: 'index.php/store/vps/vps-4',
+                    cartLink: 'order-steps/server/111',
                 },
                 {
                     name: 'VPS - 6',
@@ -183,7 +183,7 @@ export default function PageVPS() {
                     ipv4: 1,
                     ipv6: 1,
                     image: '/images/offers/vps8.jpg',
-                    cartLink: 'index.php/store/vps/vps-8',
+                    cartLink: 'order-steps/server/108',
                 },
                 {
                     name: 'VPS - 12',
@@ -207,7 +207,7 @@ export default function PageVPS() {
                     ipv4: 1,
                     ipv6: 1,
                     image: '/images/offers/vps16.jpg',
-                    cartLink: 'index.php/store/vps/vps-16',
+                    cartLink: 'order-steps/server/109',
                 },
             ]
         }
