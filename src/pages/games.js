@@ -5,6 +5,7 @@ import PaperComponent from '../components/Paper/PaperComponent';
 import { t } from 'i18next';
 import { ArrowIndicator } from '../components/Arrow/indicator';
 import OffersDisplay from '../components/OffersDisplay/OffersDisplay';
+import Button3 from '../components/Button/Button3';
 
 function Specs() {
     const theme = useTheme();
@@ -28,10 +29,12 @@ function Specs() {
     )
 }
 
-function Description() {
+function Description(props) {
     const theme = useTheme();
+    const elements = props.elements;
     const maxWidth = theme.spacing(60);
     const maxHeight = theme.spacing(46);
+
     const gap = theme.spacing(6);
 
     const TextParagraph = (props) => {
@@ -92,23 +95,43 @@ function Description() {
             width: '100vw',
         }}>
             <Grid container spacing={2} gap={gap}>
-
-                <Grid container spacing={2} justifyContent='center' gap={gap}>
-                    <Grid item xs={2} md={6} sx={{width: `min(${maxWidth}, 100vw, 100%)`}}> <Image src="https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/04/minecraft-legends-golem.jpg" alt="Minecraft Standard" /></Grid>
-                    <Grid item xs={10} md={6} sx={{width: `min(${maxWidth}, 100vw, 100%)`}}> <TextParagraph title="Minecraft Standard" text={t('page__games-description-standard')}/> </Grid>
-                </Grid>
-
-                <Grid container spacing={2} justifyContent='center' gap={gap} direction='row-reverse'>
-                    <Grid item xs={2} md={6} sx={{width: `min(${maxWidth}, 100vw, 100%)`}}> <Image src="https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/04/minecraft-legends-sunset.jpg" alt="Minecraft Advanced" /></Grid>
-                    <Grid item xs={10} md={6} sx={{width: `min(${maxWidth}, 100vw, 100%)`}}> <TextParagraph title="Minecraft Advanced" text={t('page__games-description-advanced')}/> </Grid>
-                </Grid>
-
-                <Grid container spacing={2} justifyContent='center' gap={gap}>
-                    <Grid item xs={2} md={6} sx={{width: `min(${maxWidth}, 100vw, 100%)`}}> <Image src="https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/04/minecraft-legends-piglins.jpg" alt="Minecraft Advanced Plus" /></Grid>
-                    <Grid item xs={10} md={6} sx={{width: `min(${maxWidth}, 100vw, 100%)`}}> <TextParagraph title="Minecraft Advanced Plus" text={t('page__games-description-advanced-plus')}/> </Grid>
-                </Grid>
-
+                {elements.map((element, index) => (
+                    <Grid key={index} container spacing={2} justifyContent='center' gap={gap} direction={index % 2 !== 0 ? 'row-reverse' : 'row'}>
+                        <Grid item xs={2} md={6} sx={{width: `min(${maxWidth}, 100vw, 100%)`}}> <Image src={element.imageSrc} alt={element.imageAlt} /></Grid>
+                        <Grid item xs={10} md={6} sx={{width: `min(${maxWidth}, 100vw, 100%)`}}> <TextParagraph title={element.title} text={element.text}/> </Grid>
+                    </Grid>
+                ))}
             </Grid>
+        </Box>
+    )
+}
+
+function PromotionalMsg() {
+    const theme = useTheme();
+
+    return (
+        <Box sx={{
+            padding: theme.spacing(5),
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: theme.spacing(2.5),
+        }}>
+            <Typography variant="h4">{t('page__games-promotional-msg--title')}</Typography>
+
+            <Box sx={{
+                maxWidth: `min(${theme.spacing(65)}, 100vw, 100%)`,
+                textAlign: 'center',
+            }}>
+                {t('page__games-promotional-msg--text').split('\n').map((item, key) => (
+                    <Typography variant="body1" key={key}>
+                        {item}
+                    </Typography>
+                ))}
+            </Box>
+
+            <Button3 variant="contained" color="primary">Coming Soon !</Button3>
         </Box>
     )
 }
@@ -163,13 +186,34 @@ export default function PageGames() {
                 cartLink: "order-steps/server/114",
                 image: "/images/offers/advancedplus.jpg",
             }
-        ];
+    ];
+    const description = [
+        {
+            title: "Minecraft Standard",
+            imageSrc: "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/04/minecraft-legends-golem.jpg",
+            imageAlt: "Minecraft Standard",
+            text: t('page__games-description-standard'),
+        },
+        {
+            title: "Minecraft Advanced",
+            imageSrc: "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/04/minecraft-legends-sunset.jpg",
+            imageAlt: "Minecraft Advanced",
+            text: t('page__games-description-advanced'),
+        },
+        {
+            title: "Minecraft Advanced Plus",
+            imageSrc: "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/04/minecraft-legends-piglins.jpg",
+            imageAlt: "Minecraft Advanced Plus",
+            text: t('page__games-description-advanced-plus'),
+        },
+    ]
 
     return (
         <Box>
             <OffersDisplay offers={offers} pageTitle={"page__games-group--minecraft"} />
             <ArrowIndicator />
-            <Description />
+            <PromotionalMsg />
+            <Description elements={description} />
             <Specs />
         </Box>
     )
