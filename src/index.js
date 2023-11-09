@@ -20,6 +20,7 @@ import PageSOON from './pages/soon';
 import Page404 from './pages/404';
 import PageLegal from './pages/legal';
 import PageTOS from './pages/tos';
+import PagePrivacy from './pages/privacy';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -57,6 +58,7 @@ root.render(
             <Route path="/legal" element={<PageLegal />} />
             <Route path="/legal" element={<PageSOON />} />
             <Route path="/terms-of-service" element={<PageTOS />} />
+            <Route path="/privacy-policy" element={<PagePrivacy />} />
             <Route path="*" element={<Page404 />} />
           </Routes>
 
