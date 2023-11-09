@@ -35,7 +35,7 @@ export default function OffersDisplay(props) {
                 {t(pageTitle)}
             </Typography>
 
-            <Grid container spacing={2} justifyContent='space-around' alignItems="stretch">
+            <Grid container spacing={2} justifyContent='space-around' alignItems="stretch" gap={2}>
                 {offers.map((offer, index) => (
                     <motion.div
                         key={index}
