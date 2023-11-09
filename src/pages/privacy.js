@@ -1,10 +1,7 @@
-import { Box, Divider, Typography } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import { useTranslation } from "react-i18next";
+import React from 'react';
+import TextContent from '../components/TextContent/TextContent';
 
 export default function PagePrivacy() {
-    const theme = useTheme();
-    const {t} = useTranslation();
 
     const elements = [
         'intro',
@@ -19,35 +16,6 @@ export default function PagePrivacy() {
     ]
 
     return (
-        <Box 
-            sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                flexDirection: 'column',
-                alignItems: 'center',
-                marginTop: theme.spacing(15),
-                marginBottom: theme.spacing(15),
-            }}
-        >
-            <Box sx={{
-                maxWidth: '80vw',
-                display: 'flex',
-                flexDirection: 'column',
-            }}>
-                <Typography variant="h5">{t('page__privacy--title')}:</Typography>
-                <Divider sx={{marginBottom: theme.spacing(3)}} />
-                {elements.map((element, index) => {
-                    const texts = t('page__privacy--content-'+element,  {returnObjects: true}).split('\n');
-                    return (
-                        <Box key={index} sx={{marginBottom: theme.spacing(2)}}>
-                            <Typography variant="h6" key={index}>{t('page__privacy--content-'+element+'-title')}</Typography>
-                            {texts.map((text, index) => (
-                                <Typography variant="body1" key={index}>{text}</Typography>
-                            ))}
-                        </Box>
-                    )
-                })}
-            </Box>
-        </Box>
+        <TextContent elements={elements} pageName="privacy" />
     )
 }
