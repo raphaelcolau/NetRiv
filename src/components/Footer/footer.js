@@ -151,7 +151,7 @@ export function ResponsiveFooter() {
 
             <Grid item md={12}>
                 <ListColumn title='netriv' items={[
-                    {name: 'news',                  link: 'index.php/announcements', external: true},
+                    // {name: 'news',                  link: 'index.php/announcements', external: true},
                     {name: 'about',                 link: 'about',              external: false},
                     {name: 'legal',                 link: 'legal',              external: false},
                     {name: 'legal--tos',            link: 'terms-of-service',   external: false},
@@ -164,18 +164,18 @@ export function ResponsiveFooter() {
                     {name: 'products--vps',         link: 'vps',                external: false},
                     {name: 'products--games',       link: 'games',              external: false},
                     {name: 'products--web',         link: 'web',                external: false},
-                    {name: 'products--dedicated',   link: 'dedicated',          external: false},
-                    {name: 'products--mail',        link: 'mail',               external: false},
+                    // {name: 'products--dedicated',   link: 'dedicated',          external: false},
+                    // {name: 'products--mail',        link: 'mail',               external: false},
                 ]}/>
             </Grid> 
 
             <Grid item md={12}>
                 <ListColumn title='support' items={[
-                    {name: 'support--contact',      link: 'contact.php',        external: true},
-                    {name: 'support--faq',          link: 'faq',                external: false},
-                    {name: 'support--status',       link: 'serverstatus.php',   external: true},
-                    {name: 'support--helpcenter',   link: 'index.php/knowledgebase', external: true},
-                    {name: 'support--ticket',       link: 'supporttickets.php', external: true},
+                    // {name: 'support--contact',      link: 'contact.php',        external: true},
+                    // {name: 'support--faq',          link: 'faq',                external: false},
+                    // {name: 'support--status',       link: 'serverstatus.php',   external: true},
+                    {name: 'support--helpcenter',   link: 'knowledgebase', external: true},
+                    // {name: 'support--ticket',       link: 'supporttickets.php', external: true},
                 ]}/>
             </Grid> 
 
