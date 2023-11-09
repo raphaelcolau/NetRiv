@@ -5,6 +5,7 @@ import PaperComponent from '../components/Paper/PaperComponent';
 import { t } from 'i18next';
 import { ArrowIndicator } from '../components/Arrow/indicator';
 import OffersDisplay from '../components/OffersDisplay/OffersDisplay';
+import ContentDescription from '../components/ContentDescription/ContentDescription';
 
 function Offers(props) {
     const offers = props.offers;
@@ -41,24 +42,6 @@ function Specs() {
                 <Grid item xs={12} md={4}> <PaperComponent title={t('page__games-offer-specs--pannel')}>{t('page__games-offer-specs--pannel-desc')}</PaperComponent> </Grid>
             </Grid>
 
-        </Box>
-    )
-}
-
-function Description() {
-    const theme = useTheme();
-
-    return (
-        <Box sx={{
-            backgroundColor: theme.palette.tertiary.surface,
-            paddingTop: theme.spacing(10),
-            paddingBottom: theme.spacing(10),
-        }}>
-            <Grid container spacing={2} justifyContent='space-around'>
-                <Grid item xs={12} md={6}> <PaperComponent title="Minecraft Standard">{t('page__games-description-standard')}</PaperComponent> </Grid>
-                <Grid item xs={12} md={6}> <PaperComponent title="Minecraft Advanced">{t('page__games-description-advanced')}</PaperComponent> </Grid>
-                <Grid item xs={12} md={6}> <PaperComponent title="Minecraft Advanced Plus">{t('page__games-description-advanced-plus')}</PaperComponent> </Grid>
-            </Grid>
         </Box>
     )
 }
@@ -131,6 +114,26 @@ export default function PageVPS() {
             ]
         }
     ]
+    const productsDescription = [
+        {
+            title: t('page__vps--product-description--monitoring-title'),
+            text: t('page__vps--product-description--monitoring'),
+            imageSrc: "https://www.nexdatacenter.com/wp-content/uploads/2017/03/why-datacenter-monitored.jpg",
+            imageAlt: "Monitoring",
+        },
+        {
+            title: t('page__vps--product-description--reliable-title'),
+            text: t('page__vps--product-description--reliable'),
+            imageSrc: "https://www.packetpower.com/hubfs/Blog/DATA%20CENTER%20RETROFIT.jpg",
+            imageAlt: "Reliable",
+        },
+        {
+            title: t('page__vps--product-description--backups-title'),
+            text: t('page__vps--product-description--backups'),
+            imageSrc: "https://as2.ftcdn.net/v2/jpg/02/81/12/73/1000_F_281127397_0rRt4N5lBmteSaMGbS1zN1XKvniFgLqW.jpg",
+            imageAlt: "Backups",
+        }
+    ];
 
     return (
         <Box>
@@ -138,7 +141,7 @@ export default function PageVPS() {
                 return <Offers name={product.group} offers={product.offers} key={index} />
             })}
             <ArrowIndicator />
-            <Description />
+            <ContentDescription elements={productsDescription} />
             <Specs />
         </Box>
     )
