@@ -1,12 +1,12 @@
 import React from 'react';
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import PaperComponent from '../components/Paper/PaperComponent';
 import { t } from 'i18next';
 import { ArrowIndicator } from '../components/Arrow/indicator';
 import OffersDisplay from '../components/OffersDisplay/OffersDisplay';
-import Button3 from '../components/Button/Button3';
 import ContentDescription from '../components/ContentDescription/ContentDescription';
+import PromotionalMsg from '../components/PromotionalMsg/PromotionalMsg';
 
 function Specs() {
     const theme = useTheme();
@@ -26,36 +26,6 @@ function Specs() {
                 <Grid item xs={12} md={4}> <PaperComponent title={t('page__games-offer-specs--pannel')}>{t('page__games-offer-specs--pannel-desc')}</PaperComponent> </Grid>
             </Grid>
 
-        </Box>
-    )
-}
-
-function PromotionalMsg() {
-    const theme = useTheme();
-
-    return (
-        <Box sx={{
-            padding: theme.spacing(5),
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: theme.spacing(2.5),
-        }}>
-            <Typography variant="h4">{t('page__games-promotional-msg--title')}</Typography>
-
-            <Box sx={{
-                maxWidth: `min(${theme.spacing(65)}, 100vw, 100%)`,
-                textAlign: 'center',
-            }}>
-                {t('page__games-promotional-msg--text').split('\n').map((item, key) => (
-                    <Typography variant="body1" key={key}>
-                        {item}
-                    </Typography>
-                ))}
-            </Box>
-
-            <Button3 variant="contained" color="primary">Coming Soon !</Button3>
         </Box>
     )
 }
