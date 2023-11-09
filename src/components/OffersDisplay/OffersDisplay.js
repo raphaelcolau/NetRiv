@@ -69,11 +69,14 @@ export default function OffersDisplay(props) {
                                             padding: theme.spacing(3),
                                         }}
                                     >
-                                        <Typography variant="h3" sx={{fontSize: '3.5rem', marginBottom: theme.spacing(3)}}>{offer.name}</Typography>
-                                        <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.cpu}</span> vCore @ 3,8Ghz</Typography>
-                                        <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.ram}</span> {t('page__home-bestoffers--ram')} </Typography>
-                                        <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.storage}</span> {t('page__home-bestoffers--storage')} </Typography>
-                                        <Typography variant="body1">● {t('page__home-bestoffers--bandwidth')} <span style={{fontWeight: 700}}>{offer.bandwidth >= 1 ? 1 : offer.bandwidth * 1000}</span> {offer.bandwidth >= 1 ? "Gbps" : "Mbps"} </Typography>
+                                        { offer.name ? <Typography variant="h3" sx={{fontSize: '3.5rem', marginBottom: theme.spacing(3)}}>{offer.name}</Typography> : null }
+                                        { offer.cpu ? <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.cpu}</span> vCore @ 3,8Ghz</Typography> : null }
+                                        { offer.ram ? <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.ram}</span> {t('page__home-bestoffers--ram')} </Typography> : null }
+                                        { offer.storage ? <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.storage}</span> {t('page__home-bestoffers--storage')} </Typography> : null }
+                                        { offer.bandwidth ? <Typography variant="body1">● {t('page__home-bestoffers--bandwidth')} <span style={{fontWeight: 700}}>{offer.bandwidth >= 1 ? 1 : offer.bandwidth * 1000}</span> {offer.bandwidth >= 1 ? "Gbps" : "Mbps"} </Typography> : null }
+                                        { offer.unlimitedSlot ? <Typography variant="body1">● <span style={{fontWeight: 700}}>{t('page__games-offer-minecraft--unlimited-slot')}</span></Typography> : null }
+                                        { offer.bdd ? <Typography variant="body1">● <span style={{fontWeight: 700}}>{offer.bdd}</span> {t('page__games-offer-minecraft--bdd')} <span style={{fontWeight: 700}}>{offer.bddSize} {t('page__games-offer-minecraft--giga')} </span></Typography> : null }
+                                        { offer.web ? <Typography variant="body1">●  {t('page__games-offer-minecraft--web')} <span style={{fontWeight: 700}}>{offer.webSize} {t('page__games-offer-minecraft--giga')}</span> </Typography> : null}
                                     </Box>
 
                                     <Button3 
