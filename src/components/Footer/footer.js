@@ -107,7 +107,6 @@ export function ResponsiveFooter() {
                 backgroundColor: theme.palette.tertiary.surface,
                 display: 'flex',
                 justifyContent: 'space-evenly',
-                alignItems: 'center',
                 paddingTop: theme.spacing(4),
                 paddingBottom: theme.spacing(4),
                 overflowX: 'hidden',
