@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, Typography, Avatar } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import PaperComponent from '../components/Paper/PaperComponent';
 import { t } from 'i18next';
@@ -30,17 +30,84 @@ function Specs() {
 
 function Description() {
     const theme = useTheme();
+    const maxWidth = theme.spacing(60);
+    const maxHeight = theme.spacing(46);
+    const gap = theme.spacing(6);
+
+    const TextParagraph = (props) => {
+        const title = props.title;
+        const text = props.text;
+
+        return (
+            <Box sx={{
+                marginBottom: theme.spacing(2),
+                maxWidth: maxWidth,
+                maxHeight: maxHeight,
+                overflow: 'hidden',
+            }}>
+                <Box sx={{
+                    marginBottom: theme.spacing(1),
+                }}>
+                    <Typography variant="h4" component="h2">{title}</Typography>
+                </Box>
+                <Box>
+                    <Typography variant="body1" component="p">{text}</Typography>
+                </Box>
+            </Box>
+        )
+    }
+
+    const Image = (props) => {
+        const src = props.src;
+        const alt = props.alt;
+
+        return (
+            <Box sx={{
+                maxWidth: maxWidth,
+                maxHeight: maxHeight,
+                borderRadius: theme.spacing(4),
+                overflow: 'hidden',
+            }}>
+                <Avatar 
+                    alt={alt}
+                    src={src}
+                    sx={{
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: 0,
+                        [theme.breakpoints.down('mobile_l')]: {
+                            display: 'none',
+                        },
+                    }}
+                />
+            </Box>
+        )
+    }
 
     return (
         <Box sx={{
             backgroundColor: theme.palette.tertiary.surface,
             paddingTop: theme.spacing(10),
             paddingBottom: theme.spacing(10),
+            width: '100vw',
         }}>
-            <Grid container spacing={2} justifyContent='space-around'>
-                <Grid item xs={12} md={6}> <PaperComponent title="Minecraft Standard">{t('page__games-description-standard')}</PaperComponent> </Grid>
-                <Grid item xs={12} md={6}> <PaperComponent title="Minecraft Advanced">{t('page__games-description-advanced')}</PaperComponent> </Grid>
-                <Grid item xs={12} md={6}> <PaperComponent title="Minecraft Advanced Plus">{t('page__games-description-advanced-plus')}</PaperComponent> </Grid>
+            <Grid container spacing={2} gap={gap}>
+
+                <Grid container spacing={2} justifyContent='center' gap={gap}>
+                    <Grid item xs={2} md={6} sx={{width: `min(${maxWidth}, 100vw, 100%)`}}> <Image src="https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/04/minecraft-legends-golem.jpg" alt="Minecraft Standard" /></Grid>
+                    <Grid item xs={10} md={6} sx={{width: `min(${maxWidth}, 100vw, 100%)`}}> <TextParagraph title="Minecraft Standard" text={t('page__games-description-standard')}/> </Grid>
+                </Grid>
+
+                <Grid container spacing={2} justifyContent='center' gap={gap} direction='row-reverse'>
+                    <Grid item xs={2} md={6} sx={{width: `min(${maxWidth}, 100vw, 100%)`}}> <Image src="https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/04/minecraft-legends-sunset.jpg" alt="Minecraft Advanced" /></Grid>
+                    <Grid item xs={10} md={6} sx={{width: `min(${maxWidth}, 100vw, 100%)`}}> <TextParagraph title="Minecraft Advanced" text={t('page__games-description-advanced')}/> </Grid>
+                </Grid>
+
+                <Grid container spacing={2} justifyContent='center' gap={gap}>
+                    <Grid item xs={2} md={6} sx={{width: `min(${maxWidth}, 100vw, 100%)`}}> <Image src="https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/04/minecraft-legends-piglins.jpg" alt="Minecraft Advanced Plus" /></Grid>
+                    <Grid item xs={10} md={6} sx={{width: `min(${maxWidth}, 100vw, 100%)`}}> <TextParagraph title="Minecraft Advanced Plus" text={t('page__games-description-advanced-plus')}/> </Grid>
+                </Grid>
+
             </Grid>
         </Box>
     )
