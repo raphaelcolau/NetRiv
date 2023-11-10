@@ -7,6 +7,8 @@ import { ArrowIndicator } from '../components/Arrow/indicator';
 import OffersDisplay from '../components/OffersDisplay/OffersDisplay';
 import PromotionalMsg from '../components/PromotionalMsg/PromotionalMsg';
 import { t } from 'i18next';
+import Button3 from '../components/Button/Button3';
+import { Link } from 'react-router-dom';
 
 function About(props) {
     const theme = useTheme();
@@ -72,16 +74,19 @@ function PromotionalMsg2() {
                     <Avatar
                         sx={{
                             borderRadius: theme.spacing(4),
-                            width: theme.spacing(35),
-                            height: theme.spacing(35),
+                            width: theme.spacing(40),
+                            height: theme.spacing(40),
                         }}
                         src='https://www.lebigdata.fr/wp-content/uploads/2017/04/data-center-definition.jpg'
                         alt='data center'
                     />
                 </Grid>
 
-                <Grid item xs={6} md={6} justifyContent='flex-start' direction='column' sx={{
-                    width: `min(${theme.spacing(50)}, 50%)`,
+                <Grid item xs={6} md={6} justifyContent='flex-start' sx={{
+                    width: `min(${theme.spacing(45)}, 50%)`,
+                    [theme.breakpoints.down('mobile_l')]: {
+                        width: `min(${theme.spacing(40)}, 90%)`,
+                    },
                 }}>
                     <Typography variant="h4" component="h1" gutterBottom>
                         {t('page__home-promotionalmsg2--title')}
@@ -89,6 +94,17 @@ function PromotionalMsg2() {
                     <Typography variant="body1" gutterBottom>
                         {t('page__home-promotionalmsg2--text')}
                     </Typography>
+
+                    <Link to='/vps'>
+                        <Button3 color='primary' variant='contained' sx={{
+                            float: 'right',
+                            [theme.breakpoints.down('mobile_l')]: {
+                                marginTop: theme.spacing(2),
+                            },
+                        }}>
+                            En savoir plus
+                        </Button3>
+                    </Link>
                 </Grid>
 
             </Grid>
