@@ -9,8 +9,15 @@ export default function PromotionalMsg2() {
     const theme = useTheme();
 
     return (
-        <Box>
-            <Grid container justifyContent='center' gap={3}>
+        <Box sx={{
+            display: 'flex',
+            justifyContent: 'center',
+        }}>
+            <Grid container gap={3} sx={{
+                maxWidth: '90%',
+                display: 'flex',
+                justifyContent: 'center',
+            }}>
                 
                 <Grid item xs={6} md={6}>
                     <Avatar
@@ -19,8 +26,8 @@ export default function PromotionalMsg2() {
                             width: theme.spacing(45),
                             height: theme.spacing(45),
                             [theme.breakpoints.down('mobile_l')]: {
-                                width: `min(${theme.spacing(40)}, 90%)`,
-                                height: `min(${theme.spacing(40)}, 90%)`,
+                                width: theme.spacing(40),
+                                height: theme.spacing(40),
                             },
                         }}
                         src='https://www.lebigdata.fr/wp-content/uploads/2017/04/data-center-definition.jpg'
