@@ -115,5 +115,7 @@
     "page__vps--product-description--reliable-title": "Une infrastructure fiable et performante",
     "page__vps--product-description--reliable": "Chez NetRiv, nous nous engageons à fournir des services opérationnels en permanence, sans interruption, sans coupure et sans conditions. Notre infrastructure a été conçue pour maximiser la fiabilité en utilisant des serveurs et du matériel adaptés et de qualité reconnue dans le monde du réseau.",
     "page__vps--product-description--backups-title": "Sauvegarde externalisée",
-    "page__vps--product-description--backups": "Les données de nos clients sont critiques et doivent être inaltérables. De ce fait, nos offres incluent toutes des sauvegardes externalisées quotidiennes sur un datacenter distant."
+    "page__vps--product-description--backups": "Les données de nos clients sont critiques et doivent être inaltérables. De ce fait, nos offres incluent toutes des sauvegardes externalisées quotidiennes sur un datacenter distant.",
+    "page__home-promotionalmsg2--title": "Des serveur de qualité pour un service de qualité !",
+    "page__home-promotionalmsg2--text": "Netriv propose des serveurs dotés de processeurs récents conçus pour supporter une forte charge. Pour le stockage, les serveurs sont dotés de SSD, et ce sans coût supplémentaire !"
 }

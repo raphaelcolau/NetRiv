@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Avatar, Box, Grid, Typography } from '@mui/material';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@mui/material/styles';
@@ -7,6 +7,7 @@ import PaperComponent from '../components/Paper/PaperComponent';
 import { ArrowIndicator } from '../components/Arrow/indicator';
 import OffersDisplay from '../components/OffersDisplay/OffersDisplay';
 import PromotionalMsg from '../components/PromotionalMsg/PromotionalMsg';
+import { t } from 'i18next';
 
 // function CarouselBox() {
 //     const theme = useTheme();
@@ -77,6 +78,41 @@ function About(props) {
     )
 }
 
+function PromotionalMsg2() {
+    const theme = useTheme();
+
+    return (
+        <Box>
+            <Grid container justifyContent='center' gap={3}>
+                
+                <Grid item xs={6} md={6}>
+                    <Avatar
+                        sx={{
+                            borderRadius: theme.spacing(4),
+                            width: theme.spacing(35),
+                            height: theme.spacing(35),
+                        }}
+                        src='https://www.lebigdata.fr/wp-content/uploads/2017/04/data-center-definition.jpg'
+                        alt='data center'
+                    />
+                </Grid>
+
+                <Grid item xs={6} md={6} justifyContent='flex-start' direction='column' sx={{
+                    width: `min(${theme.spacing(50)}, 50%)`,
+                }}>
+                    <Typography variant="h4" component="h1" gutterBottom>
+                        {t('page__home-promotionalmsg2--title')}
+                    </Typography>
+                    <Typography variant="body1" gutterBottom>
+                        {t('page__home-promotionalmsg2--text')}
+                    </Typography>
+                </Grid>
+
+            </Grid>
+        </Box>
+    )
+}
+
 export default function PageHome() {
     const offers = [
         {
@@ -135,6 +171,7 @@ export default function PageHome() {
             {/* <CarouselBox /> */}
             <ArrowIndicator />
             <PromotionalMsg />
+            <PromotionalMsg2 />
             <About />
         </Box>
     )
