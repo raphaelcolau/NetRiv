@@ -26,6 +26,9 @@ export function ArrowIndicator() {
                 cursor: 'pointer',
                 [theme.breakpoints.down('laptop_l')]: {
                     display: 'none',
+                },
+                '@media (min-resolution: 120dpi)': {
+                    display: 'none',
                 }
             }}
             onClick={() => {
