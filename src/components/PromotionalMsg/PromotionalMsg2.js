@@ -42,12 +42,17 @@ export default function PromotionalMsg2() {
                     </Typography>
 
                     <Link to='/vps'>
-                        <Button3 color='primary' variant='contained' sx={{
-                            float: 'right',
-                            [theme.breakpoints.down('mobile_l')]: {
-                                marginTop: theme.spacing(2),
-                            },
-                        }}>
+                        <Button3 color='primary' variant='contained'
+                            sx={{
+                                float: 'right',
+                                [theme.breakpoints.down('mobile_l')]: {
+                                    marginTop: theme.spacing(2),
+                                },
+                            }}
+                            onClick={() => {
+                                window.scrollTo(0, 0);
+                            }}
+                        >
                             {t('page__home-promotionalmsg2--button')}
                         </Button3>
                     </Link>
