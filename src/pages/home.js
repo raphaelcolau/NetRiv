@@ -3,27 +3,10 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@mui/material/styles';
 import PaperComponent from '../components/Paper/PaperComponent';
-// import Carousel from '../components/Carousel/carousel3';
 import { ArrowIndicator } from '../components/Arrow/indicator';
 import OffersDisplay from '../components/OffersDisplay/OffersDisplay';
 import PromotionalMsg from '../components/PromotionalMsg/PromotionalMsg';
 import { t } from 'i18next';
-
-// function CarouselBox() {
-//     const theme = useTheme();
-
-//     return (
-//         <Box 
-//             sx={{
-//                 width: '100vw',
-//                 height: theme.spacing(55),
-//                 backgroundColor: theme.palette.tertiary.surface,
-//             }}
-//         >
-//             <Carousel />
-//         </Box>
-//     )
-// }
 
 function About(props) {
     const theme = useTheme();
@@ -168,7 +151,6 @@ export default function PageHome() {
     return (
         <Box>
             <OffersDisplay offers={offers} pageTitle="page__home-bestoffers--title" />
-            {/* <CarouselBox /> */}
             <ArrowIndicator />
             <PromotionalMsg />
             <PromotionalMsg2 />
