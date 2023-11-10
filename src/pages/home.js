@@ -74,8 +74,12 @@ function PromotionalMsg2() {
                     <Avatar
                         sx={{
                             borderRadius: theme.spacing(4),
-                            width: theme.spacing(40),
-                            height: theme.spacing(40),
+                            width: theme.spacing(45),
+                            height: theme.spacing(45),
+                            [theme.breakpoints.down('mobile_l')]: {
+                                width: `min(${theme.spacing(40)}, 90%)`,
+                                height: `min(${theme.spacing(40)}, 90%)`,
+                            },
                         }}
                         src='https://www.lebigdata.fr/wp-content/uploads/2017/04/data-center-definition.jpg'
                         alt='data center'
