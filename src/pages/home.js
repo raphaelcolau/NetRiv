@@ -6,7 +6,7 @@ import PaperComponent from '../components/Paper/PaperComponent';
 import { ArrowIndicator } from '../components/Arrow/indicator';
 import OffersDisplay from '../components/OffersDisplay/OffersDisplay';
 import PromotionalMsg from '../components/PromotionalMsg/PromotionalMsg';
-import PromotionalMsg2 from '../components/PromotionalMsg/PromotionalMsg2';
+// import PromotionalMsg2 from '../components/PromotionalMsg/PromotionalMsg2';
 
 function About(props) {
     const theme = useTheme();
@@ -118,7 +118,7 @@ export default function PageHome() {
             <OffersDisplay offers={offers} pageTitle="page__home-bestoffers--title" />
             <ArrowIndicator />
             <PromotionalMsg />
-            <PromotionalMsg2 />
+            {/* <PromotionalMsg2 /> */}
             <About />
         </Box>
     )
