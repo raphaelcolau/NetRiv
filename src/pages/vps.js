@@ -6,6 +6,7 @@ import { t } from 'i18next';
 import { ArrowIndicator } from '../components/Arrow/indicator';
 import OffersDisplay from '../components/OffersDisplay/OffersDisplay';
 import ContentDescription from '../components/ContentDescription/ContentDescription';
+import PromotionalMsg from '../components/PromotionalMsg/PromotionalMsg';
 
 function Offers(props) {
     const offers = props.offers;
@@ -141,6 +142,7 @@ export default function PageVPS() {
                 return <Offers name={product.group} offers={product.offers} key={index} />
             })}
             <ArrowIndicator />
+            <PromotionalMsg />
             <ContentDescription elements={productsDescription} />
             <Specs />
         </Box>
