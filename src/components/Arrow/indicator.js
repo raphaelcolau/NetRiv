@@ -58,8 +58,8 @@ export function ArrowIndicator() {
                     >
                         <ArrowBackIosRoundedIcon
                             sx={{
-                                width: theme.spacing(10),
-                                height: theme.spacing(10),
+                                width: theme.spacing(7),
+                                height: theme.spacing(7),
                                 marginBottom: theme.spacing(2),
                                 color: theme.palette.outline.main,
                                 transform: 'rotate(-90deg)',
