@@ -39,8 +39,8 @@ export default function ContentDescription(props) {
 
         return (
             <Box sx={{
-                maxWidth: maxWidth,
-                maxHeight: maxHeight,
+                width: maxWidth,
+                height: `calc(${maxWidth} * 0.6)`,
                 borderRadius: theme.spacing(4),
                 overflow: 'hidden',
             }}>
