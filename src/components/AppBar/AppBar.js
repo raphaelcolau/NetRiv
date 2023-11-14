@@ -94,7 +94,7 @@ export function ResponsiveAppBar() {
                                 },
                             }}
                             onClick={() => {
-                                window.location.href = managerLink("clientarea.php", "full");
+                                window.location.href = managerLink("/myaccount", "full");
                             }}
                         >
                             {useMediaQuery(theme.breakpoints.up('mobile_l')) ? t("button_label-customer-area") : <PersonOutlineOutlinedIcon />}
